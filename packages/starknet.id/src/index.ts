@@ -94,7 +94,7 @@ export function useDomainFromAddress(address: BigNumberish): DomainData {
     args: [address],
   })
 
-  if (!data || data?.['domain_len'] === 0) {
+  if (!data) {
     return { domain: '', error: error ? error : 'error', refresh, loading }
   } else {
     let domain = useDecoded(data[0] as any)
